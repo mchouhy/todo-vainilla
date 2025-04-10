@@ -58,12 +58,10 @@ button {
 }
 
 ul {
-  padding-left: 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   row-gap: 1rem;
-  position: relative;
 }
 
 .todo-container {
@@ -73,9 +71,13 @@ ul {
 }
 
 li {
-  padding-left: 1rem;
+  list-style: none;
+  padding: 15px 8px 15px 40px;
   font-size: 1rem;
   cursor: pointer;
+  position: relative;
+  font-size: 1.2rem;
+  height: 100%;
 }
 
 li::before {
@@ -85,11 +87,18 @@ li::before {
   overflow: hidden;
   background-size: cover;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  background-position: center;
+  width: 28px;
+  height: 28px;
   position: absolute;
-  left: 0px;
+  background-position: center;
+  top: 12px;
+  left: 0;
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  text-align: center;
 }
 
 .checked {
@@ -100,8 +109,8 @@ li::before {
   content: "";
   background-image: url("https://cdn-icons-png.flaticon.com/512/190/190411.png");
   background-size: cover;
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   background-color: #4caf50;
   color: #4caf50;
   border-radius: 32px;

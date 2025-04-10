@@ -8,22 +8,16 @@ const addTask = (event) => {
   if (todoInput.value === "") {
     alert("Please enter a task.");
     return;
+  } else {
+    const todoItem = document.createElement("li");
+    todoItem.innerHTML = todoInput.value;
+    const todoDelete = document.createElement("span");
+    todoDelete.innerHTML = "\u00d7";
+    todoDelete.classList.add("delete-btn");
+    todoList.appendChild(todoItem);
+    todoItem.appendChild(todoDelete);
+    todoInput.value = "";
   }
-  const todoContainer = document.createElement("div");
-  todoContainer.classList.add("todo-container");
-  const todoItem = document.createElement("li");
-  todoItem.innerHTML = todoInput.value;
-  const todoDelete = document.createElement("button");
-  todoDelete.classList.add("delete-btn");
-  todoDelete.innerHTML = "Delete";
-  todoContainer.appendChild(todoItem);
-  todoContainer.appendChild(todoDelete);
-  todoList.appendChild(todoContainer);
-  todoItem.addEventListener("click", checkTask);
-  todoDelete.addEventListener("click", () => {
-    todoContainer.remove();
-  });
-  todoInput.value = "";
 };
 
 const checkTask = (event) => {
@@ -32,6 +26,13 @@ const checkTask = (event) => {
 };
 
 todoForm.addEventListener("submit", addTask);
+todoList.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    checkTask(e);
+  } else if (e.target.tagName === "SPAN") {
+    e.target.parentElement.remove();
+  }
+});
 
 const date = new Date();
 const options = {
