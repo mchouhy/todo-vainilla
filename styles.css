@@ -17,7 +17,7 @@ main {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 2rem;
   border-radius: 32px;
   border: 1px solid gray;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -37,20 +37,24 @@ form {
 }
 
 input {
-  width: 80%;
+  width: 70%;
   border: none;
   outline: none;
   border-bottom: 2px solid gray;
 }
 
 button {
-  width: 15%;
+  width: 20%;
   background-color: #007bff;
   color: white;
   border: none;
   padding: 0.5rem;
   border-radius: 16px;
   cursor: pointer;
+}
+
+.delete-btn {
+  width: 20%;
 }
 
 ul {
@@ -60,6 +64,12 @@ ul {
   justify-content: center;
   row-gap: 1rem;
   position: relative;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 li {

@@ -5,9 +5,24 @@ const todoDate = document.getElementById("date");
 
 const addTask = (event) => {
   event.preventDefault();
+  if (todoInput.value === "") {
+    alert("Please enter a task.");
+    return;
+  }
+  const todoContainer = document.createElement("div");
+  todoContainer.classList.add("todo-container");
   const todoItem = document.createElement("li");
   todoItem.innerHTML = todoInput.value;
-  todoList.appendChild(todoItem);
+  const todoDelete = document.createElement("button");
+  todoDelete.classList.add("delete-btn");
+  todoDelete.innerHTML = "Delete";
+  todoContainer.appendChild(todoItem);
+  todoContainer.appendChild(todoDelete);
+  todoList.appendChild(todoContainer);
+  todoItem.addEventListener("click", checkTask);
+  todoDelete.addEventListener("click", () => {
+    todoContainer.remove();
+  });
   todoInput.value = "";
 };
 
@@ -17,7 +32,6 @@ const checkTask = (event) => {
 };
 
 todoForm.addEventListener("submit", addTask);
-todoList.addEventListener("click", checkTask);
 
 const date = new Date();
 const options = {
