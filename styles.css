@@ -61,7 +61,6 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  row-gap: 1rem;
 }
 
 .todo-container {
@@ -72,7 +71,7 @@ ul {
 
 li {
   list-style: none;
-  padding: 15px 8px 15px 40px;
+  padding: 12px 8px 12px 40px;
   font-size: 1rem;
   cursor: pointer;
   position: relative;
@@ -87,8 +86,8 @@ li::before {
   overflow: hidden;
   background-size: cover;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   position: absolute;
   background-position: center;
   top: 12px;
@@ -109,8 +108,8 @@ ul li span {
   content: "";
   background-image: url("https://cdn-icons-png.flaticon.com/512/190/190411.png");
   background-size: cover;
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   background-color: #4caf50;
   color: #4caf50;
   border-radius: 32px;
